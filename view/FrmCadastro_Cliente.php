@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-          <a href="Cadastro_Cliente.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <a href="FrmCadastro_Cliente.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32">
               <use xlink:href="" />
             </svg>
@@ -22,9 +22,9 @@
           </div>-->
          
           <ul class="nav nav-pills">
-            <li class="nav-item"><a href="Home.html" class="nav-link"><i class="fa-solid fa-house ">&nbsp;</i>Home</a></li>
-            <li class="nav-item"><a href="Agenda.html" class="nav-link"><i class="fa-solid fa-calendar-days">&nbsp;</i>Agenda</a></li>
-            <li class="nav-item"><a href="Cadastro.html" class="nav-link"><i class="fa-solid fa-address-card fa-beat-fade">&nbsp;</i>Cadastro</a></li>
+            <li class="nav-item"><a href="FrmHome.php" class="nav-link"><i class="fa-solid fa-house ">&nbsp;</i>Home</a></li>
+            <li class="nav-item"><a href="FrmAgenda.php" class="nav-link"><i class="fa-solid fa-calendar-days">&nbsp;</i>Agenda</a></li>
+            <li class="nav-item"><a href="FrmCadastro.php" class="nav-link"><i class="fa-solid fa-address-card fa-beat-fade">&nbsp;</i>Cadastro</a></li>
           </ul>
         </header>
       </div>
@@ -52,7 +52,7 @@
                 <option value="3">Porto Alegre</option>
             </select><br />
 
-            <a href="Cadastro_Pet.html"><button type="button"  id="botao_home" name="cadpet" class="btn btn-primary">Cadastre seu Pet</button></a><br />
+            <a href="FrmCadastro_Pet.php"><button type="button"  id="botao_home" name="cadpet" class="btn btn-primary">Cadastre seu Pet</button></a><br />
 
             <div style="float: right;">
                 <button type="clear" id="btnlimparcadecliente" name="btnlimparcadecliente"

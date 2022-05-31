@@ -23,9 +23,9 @@
          
          
           <ul class="nav nav-pills">
-            <li class="nav-item"><a href="Home.html" class="nav-link"><i class="fa-solid fa-house ">&nbsp;</i>Home</a></li>
-            <li class="nav-item"><a href="Agenda.html" class="nav-link"><i class="fa-solid fa-calendar-days">&nbsp;</i>Agenda</a></li>
-            <li class="nav-item"><a href="Cadastro.html" class="nav-link"><i class="fa-solid fa-address-card fa-beat-fade">&nbsp;</i>Cadastro</a></li>
+            <li class="nav-item"><a href="FrmHome.php" class="nav-link"><i class="fa-solid fa-house ">&nbsp;</i>Home</a></li>
+            <li class="nav-item"><a href="FrmAgenda.php" class="nav-link"><i class="fa-solid fa-calendar-days">&nbsp;</i>Agenda</a></li>
+            <li class="nav-item"><a href="FrmCadastro.php" class="nav-link"><i class="fa-solid fa-address-card fa-beat-fade">&nbsp;</i>Cadastro</a></li>
           </ul>
         </header>
       </div>

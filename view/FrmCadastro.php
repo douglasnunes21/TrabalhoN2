@@ -9,7 +9,7 @@
     <body>
         <div class="container">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-              <a href="Cadastro.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+              <a href="FrmCadastro.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
                   <use xlink:href="#" />
                 </svg>
@@ -18,9 +18,9 @@
              
         
               <ul class="nav nav-pills">
-                <li class="nav-item"><a href="Home.html" class="nav-link"><i class="fa-solid fa-house ">&nbsp;</i>Home</a></li>
-                <li class="nav-item"><a href="Agenda.html" class="nav-link"><i class="fa-solid fa-calendar-days">&nbsp;</i>Agenda</a></li>
-                <li class="nav-item"><a href="Cadastro.html" class="nav-link"><i class="fa-solid fa-address-card fa-beat-fade">&nbsp;</i>Cadastro</a></li>
+                <li class="nav-item"><a href="FrmHome.php" class="nav-link"><i class="fa-solid fa-house ">&nbsp;</i>Home</a></li>
+                <li class="nav-item"><a href="FrmAgenda.php" class="nav-link"><i class="fa-solid fa-calendar-days">&nbsp;</i>Agenda</a></li>
+                <li class="nav-item"><a href="FrmCadastro.php" class="nav-link"><i class="fa-solid fa-address-card fa-beat-fade">&nbsp;</i>Cadastro</a></li>
               </ul>
             </header>
           </div>
@@ -34,7 +34,7 @@
               <!--<img class="card-img-top" src="img/img-cad-1.png" alt="Card image cap">-->
               <i id="icone_home" class="fa-solid fa-address-card fa-10x" style="text-align: center;"></i>
               <div class="card-body">
-                <a href="Cadastro_Cliente.html" id="botao_home" class="btn btn-dark">Cadastrar um Cliente</a>
+                <a href="FrmCadastro_Cliente.php" id="botao_home" class="btn btn-dark">Cadastrar um Cliente</a>
             </div>
             </div>
             <div class="card" style="text-align: center;">
@@ -42,7 +42,7 @@
               <!--<img class="card-img-top" src="img/img-cad-2.png" alt="Card image cap">-->
               <i id="icone_home" class="fa-solid fa-city fa-10x" style="text-align: center;"></i>
               <div class="card-body">
-                <a href="Cadastro_Cidade.html" id="botao_home" class="btn btn-dark">Cadastrar uma Cidade</a>
+                <a href="FrmCadastro_Cidade.php" id="botao_home" class="btn btn-dark">Cadastrar uma Cidade</a>
             </div>
             </div>
             <div class="card" style="text-align: center;">
@@ -50,7 +50,7 @@
               <!--<img class="card-img-top" src="img/img-cad-3.png" alt="Card image cap">-->
               <i id="icone_home" class="fa-solid fa-mountain-city fa-10x" style="text-align: center;"></i>
               <div class="card-body">
-                <a href="Cadastro_Estado.html" id="botao_home" class="btn btn-dark">Cadastrar um Estado</a>
+                <a href="FrmCadastro_Estado.php" id="botao_home" class="btn btn-dark">Cadastrar um Estado</a>
             </div>
             </div>
             <div class="card" style="text-align: center;">
@@ -58,7 +58,7 @@
                 <!--<img class="card-img-top" src="img/img-cad-4.png" alt="Card image cap">-->
                 <i id="icone_home" class="fa-solid fa-earth-americas fa-10x" style="text-align: center;"></i>
                 <div class="card-body">                
-                  <a href="Cadastro_Pais.html" id="botao_home" class="btn btn-dark">Cadastrar um País</a>
+                  <a href="FrmCadastro_Pais.php" id="botao_home" class="btn btn-dark">Cadastrar um País</a>
                 </div>
               </div>
           </div>
