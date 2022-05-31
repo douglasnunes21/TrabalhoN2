@@ -3,7 +3,7 @@
 class Conexao{
 
     public static function abrir(){
-        $banco = "TrabalhoN2";
+        $banco = "trabalhon2";
         $local = "localhost";
         $usuario = "root";
         $senha = "";
@@ -44,11 +44,12 @@ class Conexao{
         $conn = self::abrir();
         if($conn){
             $result = mysqli_query($conn, $sql);
-            self::fechar($conn);
+            self::fechar( $conn );
             return $result;
+        } else {
+            return NULL;
         }
-        return NULL;
-    }
+    } 
 
 
 }

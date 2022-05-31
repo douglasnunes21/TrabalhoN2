@@ -3,8 +3,9 @@ $action = "inserir";
 
 ?>
 
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+    
 <head>
     <meta charset="utf-8" name="viewport" content="width = device-width,
                 initial-scale = 1.0, user-scalable = no">
@@ -49,9 +50,9 @@ $action = "inserir";
             </select><br />-->
             <div style="float: right;">
                 <button type="reset" id="btnresetcadpais" name="btnresetcadpais"
-                    class="btn btn-outline-primary">Reset</button>
+                    class="btn btn-outline-primary"value="Limpar">Reset</button>
                 <button type="submit" id="btncadpais" name="btncadpais"
-                    class="btn btn-outline-success">Cadastrar</button>
+                    class="btn btn-outline-success" value="Cadastrar">Cadastrar</button>
             </div>
             <br />
             <!--<button type="submit">Cadastrar</button>
@@ -66,14 +67,14 @@ $action = "inserir";
             </thead>
             <tbody>
                 <tr>
-                    <th>Brasil</th>
-                    <th>BRA</th>
+                    <td id="td1"></td>
+                    <td id="td2"></td>
                 </tr>
             </tbody>
         </table>
         <div style="float: right;">
-            <button type="button" id="btnremovepais" name="btnremovepais" class="btn btn-outline-danger">Remover</button>
-            <button type="button" id="btnalterapais" name="btnalterapais" class="btn btn-outline-primary">Alterar</button>
+            <button type="button" id="btnremovepais" name="btnremovepais" class="btn btn-outline-danger" value="remover">Remover</button>
+            <button type="button" id="btnalterapais" name="btnalterapais" class="btn btn-outline-primary" value="alterar">Alterar</button>
         </div>
     </div>
 </body>

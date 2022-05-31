@@ -6,11 +6,10 @@ if(isset($_REQUEST['inserir'])){
 
     $nome = $_POST['nomepais'];
     $sigla = $_POST['siglapais'];
-
     $pais = new Pais($nome, $sigla);
     
 
-    echo $pais->getNome().' '.$pais->getSigla();
+    /*echo $pais->getNome().' '.$pais->getSigla();*/
 
     PaisDao::inserir($pais);
 
