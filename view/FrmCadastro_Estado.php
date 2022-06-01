@@ -111,9 +111,9 @@ if (isset($_REQUEST['editar'])) {
                        echo '<tr>';
                        echo '<td>'.$estado->getNome().'</td>';
                        echo '<td>'.$estado->getUf().'</td>';
-                       echo '<td>'.$estado->getPais().'</td>';
+                       echo '<td>'.$estado->getPais()->getNome().'</td>';
                        echo '<td><a href="FrmCadastro_Estado.php?editar&id='.$estado->getId().'"><button>Editar</button><a><td>';
-                       echo '<td><a href="../controller/EstadoController.php?excluir&id='.$estado->getNome().'"><button>Excluir</button><a><td>';
+                       echo '<td><a href="../controller/EstadoController.php?excluir&id='.$estado->getId().'"><button>Excluir</button><a><td>';
                        echo '</tr>';
                    }
                    ?>
