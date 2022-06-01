@@ -36,7 +36,7 @@
           <!--<img class="card-img-top" src="img/img-agenda-2.png" alt="Card image cap">-->
           <i id="icone_home" class="fa-solid fa-calendar-days fa-10x" style="text-align: center;"></i>
           <div class="card-body" style="text-align: center;">
-            <a href="Agenda.html" id="botao_home" class="btn btn-dark">Agendar ou Desmarcar um Horário</a>
+            <a href="FrmAgenda.php" id="botao_home" class="btn btn-dark">Agendar ou Desmarcar um Horário</a>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
           <div class="card-body" style="text-align: center;">
             <!--<h5 class="card-title">Special title treatment</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
-            <a href="Cadastro.html" id="botao_home" class="btn btn-dark">Realizar um Cadastro</a>
+            <a href="FrmCadastro.php" id="botao_home" class="btn btn-dark">Realizar um Cadastro</a>
           </div>
         </div>
       </div>
