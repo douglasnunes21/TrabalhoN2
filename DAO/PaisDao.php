@@ -36,7 +36,7 @@ include_once'../model/PaisModel.php';
                     $pais = new Pais();
                     $pais->setId($_id);
                     $pais->setNome($_nome);
-                    $pais->setUf($_sigla);
+                    $pais->setSigla($_sigla);
             }
             return $pais;
         }
