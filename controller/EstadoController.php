@@ -3,12 +3,13 @@ include_once'../model/EstadoModel.php';
 include_once'../DAO/EstadoDao.php';
 
     if(isset($_REQUEST['inserir'])){
+
         $nome = $_POST['nomeestado'];
         $uf = $_POST['siglaestado'];
         $pais = $_POST['nomepais'];
 
-    $estado = new Estado($nome, $uf, $pais);     
-    echo $estado->getNome().' '.$estado->getUf().' '.$estado->getPais();
+        $estado = new Estado($nome, $uf, $pais);     
+        echo $estado->getNome().' '.$estado->getUf().' '.$estado->getPais();
 
         EstadoDao::inserir($estado);
 

@@ -1,5 +1,17 @@
 <?php
 $action = "inserir";
+include_once '../DAO/PaisDao.php';
+
+
+$nome = "";
+$sigla = "";
+
+if (isset($_REQUEST['editar'])) {
+    $pais = PaisDao::buscarPorId($_GET['id']);
+    $nome = $pais->getNome();
+    $sigla = $pais->getSigla();
+    $action = "editar&id=" . $pais->getId();
+}
 
 ?>
 
@@ -58,6 +70,10 @@ $action = "inserir";
             <!--<button type="submit">Cadastrar</button>
             <button type="clear">Limpar</button>-->
         </form>
+
+        <?php
+        $lista = PaisDao::buscar();
+        ?>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -66,10 +82,16 @@ $action = "inserir";
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td id="td1"></td>
-                    <td id="td2"></td>
-                </tr>
+            <?php 
+                   foreach($lista as $pais){
+                       echo '<tr>';
+                       echo '<td>'.$pais->getNome().'</td>';
+                       echo '<td>'.$pais->getSigla().'</td>';
+                       echo '<td><a href="FrmCadastro_Pais.php?editar&id='.$pais->getId().'"><button>Editar</button><a><td>';
+                       echo '<td><a href="../controller/PaisController.php?excluir&id='.$pais->getId().'"><button>Excluir</button><a><td>';
+                       echo '</tr>';
+                   }
+                   ?>
             </tbody>
         </table>
         <div style="float: right;">
