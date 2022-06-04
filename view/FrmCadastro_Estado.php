@@ -84,10 +84,11 @@ if (isset($_REQUEST['editar'])) {
 
                ?>
 
-
+            
             </select>
+            <br>
             <div style="float: right;">
-                <button type="reset" id="btnlimparcadestado" name="btnlimparcadestado" class="btn btn-outline-primary" value="Limpar">Reset</button>
+                <!--<button type="reset" id="btnlimparcadestado" name="btnlimparcadestado" class="btn btn-outline-primary" value="Limpar">Reset</button>-->
                 <button type="submit" id="btncadestado" name="btncadestado" class="btn btn-outline-success" value="Cadastrar">Cadastrar</button>
             </div>
             <br />
@@ -112,17 +113,17 @@ if (isset($_REQUEST['editar'])) {
                        echo '<td>'.$estado->getNome().'</td>';
                        echo '<td>'.$estado->getUf().'</td>';
                        echo '<td>'.$estado->getPais()->getNome().'</td>';
-                       echo '<td><a href="FrmCadastro_Estado.php?editar&id='.$estado->getId().'"><button>Editar</button><a><td>';
-                       echo '<td><a href="../controller/EstadoController.php?excluir&id='.$estado->getId().'"><button>Excluir</button><a><td>';
+                       echo '<td><a href="FrmCadastro_Estado.php?editar&id='.$estado->getId().'"><button class="btn btn-outline-primary">Editar</button><a><td>';
+                       echo '<td><a href="../controller/EstadoController.php?excluir&id='.$estado->getId().'"><button class="btn btn-outline-danger">Excluir</button><a><td>';
                        echo '</tr>';
                    }
                    ?>
             </tbody>
         </table>
-        <div style="float: right;">
+        <!--<div style="float: right;">
             <button type="button" id="btnremoveestado" name="btnremoveestado" class="btn btn-outline-danger" onclick="remover()" value="remover">Remover</button>
             <button type="button" id="btnalteraestado" name="btnalteraestado" class="btn btn-outline-primary" onclick="alterar()" value="alterar">Alterar</button>
-        </div>
+        </div>-->
     </div>
 </body>
 

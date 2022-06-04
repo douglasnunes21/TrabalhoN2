@@ -28,15 +28,15 @@ include_once'../model/PaisModel.php';
             return $lista;
         }
 
-        public static function buscarPorId($id){
-            $sql = "SELECT id, nome, sigla FROM pais WHERE id=".$id;
-            $result = Conexao::consultar($sql);
-            if($result != NUll){
-               list($_id, $_nome, $_sigla) = mysqli_fetch_row($result);
-                    $pais = new Pais();
-                    $pais->setId($_id);
-                    $pais->setNome($_nome);
-                    $pais->setSigla($_sigla);
+    public static function buscarPorId($id){
+        $sql = "SELECT id, nome, sigla FROM pais WHERE id=".$id;
+        $result = Conexao::consultar($sql);
+        if($result != NUll){
+            list($_id, $_nome, $_sigla) = mysqli_fetch_row($result);
+                $pais = new Pais();
+                $pais->setId($_id);
+                $pais->setNome($_nome);
+                $pais->setSigla($_sigla);
             }
             return $pais;
         }
@@ -46,6 +46,11 @@ include_once'../model/PaisModel.php';
                ."nome = '".$pais->getNome()."',"  
                ."sigla = '".$pais->getSigla()."'"   
                ."WHERE id = ".$pais->getId();
+        Conexao::executar($sql);
+    }
+
+    public static function excluir($id){
+        $sql = "DELETE from pais WHERE id=".$id;
         Conexao::executar($sql);
     }
 

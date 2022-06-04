@@ -51,8 +51,8 @@ if (isset($_REQUEST['editar'])) {
         <h2 style="text-align: center;"  id="descritivo" class="display-7">Informe os dados</h2>
         <br />
         <form action="../controller/PaisController.php?<?php echo $action?>" method="POST">
-            <input type="text" class="form-control" id="nomepais" name="nomepais" placeholder="Nome" /><br />
-            <input type="text" class="form-control" id="siglapais" name="siglapais" placeholder="Sigla" /><br />
+            <input value="<?php echo $nome?>" type="text" class="form-control" id="nomepais" name="nomepais" placeholder="Nome" /><br />
+            <input value="<?php echo $sigla?>" type="text" class="form-control" id="siglapais" name="siglapais" placeholder="Sigla" /><br />
             <!--<label>Sigla: </label>-->
             <!--<select class="form-select">
                 <option selected>Selecione a Sigla</option>
@@ -61,8 +61,8 @@ if (isset($_REQUEST['editar'])) {
                 <option value="3">URU</option>
             </select><br />-->
             <div style="float: right;">
-                <button type="reset" id="btnresetcadpais" name="btnresetcadpais"
-                    class="btn btn-outline-primary"value="Limpar">Reset</button>
+                <!--<button type="reset" id="btnresetcadpais" name="btnresetcadpais"
+                    class="btn btn-outline-primary"value="Limpar">Reset</button>-->
                 <button type="submit" id="btncadpais" name="btncadpais"
                     class="btn btn-outline-success" value="Cadastrar">Cadastrar</button>
             </div>
@@ -87,17 +87,17 @@ if (isset($_REQUEST['editar'])) {
                        echo '<tr>';
                        echo '<td>'.$pais->getNome().'</td>';
                        echo '<td>'.$pais->getSigla().'</td>';
-                       echo '<td><a href="FrmCadastro_Pais.php?editar&id='.$pais->getId().'"><button>Editar</button><a><td>';
-                       echo '<td><a href="../controller/PaisController.php?excluir&id='.$pais->getId().'"><button>Excluir</button><a><td>';
+                       echo '<td><a href="FrmCadastro_Pais.php?editar&id='.$pais->getId().'"><button class="btn btn-outline-primary">Editar</button><a><td>';
+                       echo '<td><a href="../controller/PaisController.php?excluir&id='.$pais->getId().'"><button class="btn btn-outline-danger" >Excluir</button><a><td>';
                        echo '</tr>';
                    }
                    ?>
             </tbody>
         </table>
-        <div style="float: right;">
+        <!--<div style="float: right;">
             <button type="button" id="btnremovepais" name="btnremovepais" class="btn btn-outline-danger" value="remover">Remover</button>
             <button type="button" id="btnalterapais" name="btnalterapais" class="btn btn-outline-primary" value="alterar">Alterar</button>
-        </div>
+        </div>-->
     </div>
 </body>
 
