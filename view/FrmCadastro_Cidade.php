@@ -1,6 +1,9 @@
 <?php
 $action = "inserir";
 
+include_once '../DAO/PaisDao.php';
+include_once '../DAO/EstadoDao.php';
+include_once '../DAO/CidadeDao.php';
 ?>
 
 <html>
