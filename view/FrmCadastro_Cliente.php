@@ -1,4 +1,13 @@
-<html>
+<?php
+$action = "inserir";
+include_once '../DAO/CidadeDao.php';
+include_once '../DAO/ClienteDao.php';
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8" name="viewport" content="width = device-width,
@@ -50,7 +59,8 @@
                 <option value="1">Curitiba</option>
                 <option value="2">Florianopolis</option>
                 <option value="3">Porto Alegre</option>
-            </select><br />
+            </select>
+            <br>
 
             <a href="FrmCadastro_Pet.php"><button type="button"  id="botao_home" name="cadpet" class="btn btn-primary">Cadastre seu Pet</button></a><br />
 
@@ -62,6 +72,10 @@
             </div>
             <br /><br />
         </form>
+        <br>
+        <?php
+        $lista = ClienteDao::buscar();
+        ?>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -77,25 +91,31 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>João</th>
-                    <th>Brasileiro</th>
-                    <th>999999999</th>
-                    <th>joao@gmail.com</th>
-                    <th>99999999</th>
-                    <th>Teste</th>
-                    <th>99</th>
-                    <th>AP 101</th>
-                    <th>Porto Alegre</th>
-                </tr>
+            <?php 
+                   foreach($lista as $cliente){
+                       echo '<tr>';
+                       echo '<td>'.$cliente->getNome().'</td>';
+                       echo '<td>'.$cliente->getNacionalidade().'</td>';
+                       echo '<td>'.$cliente->getCpf().'</td>';
+                       echo '<td>'.$cliente->getEmail().'</td>';
+                       echo '<td>'.$cliente->getTelefone().'</td>';
+                       echo '<td>'.$cliente->getRua().'</td>';
+                       echo '<td>'.$cliente->getNumero().'</td>';
+                       echo '<td>'.$cliente->getComplemento().'</td>';
+                       echo '<td>'.$cliente->getCidade().'</td>';
+                       echo '<td><a href="FrmCadastro_Cliente.php?editar&id='.$cliente->getId().'"><button class="btn btn-outline-primary">Editar</button><a><td>';
+                       echo '<td><a href="../controller/ClienteController.php?excluir&id='.$cliente->getId().'"><button class="btn btn-outline-danger">Excluir</button><a><td>';
+                       echo '</tr>';
+                   }
+                   ?>
             </tbody>
         </table>
-        <div style="float: right;">
+        <!--<div style="float: right;">
             <button type="button" id="btnremovecliente" name="btnremovecliente"
                 class="btn btn-outline-danger">Remover</button>
             <button type="button" id="btnalteracliente" name="btnalteracliente"
                 class="btn btn-outline-primary">Alterar</button>
-        </div>
+        </div>-->
 
     </div>
 </body>
