@@ -2,6 +2,8 @@
 
 include_once'../model/ClienteModel.php';
 include_once'../DAO/ClienteDao.php';
+include_once'../model/CidadeModel.php';
+include_once'../DAO/CidadeDao.php';
 
 if(isset($_REQUEST['inserir'])){
 

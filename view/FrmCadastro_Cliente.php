@@ -1,8 +1,33 @@
 <?php
 $action = "inserir";
+include_once '../DAO/PaisDao.php';
+include_once '../DAO/EstadoDao.php';
 include_once '../DAO/CidadeDao.php';
 include_once '../DAO/ClienteDao.php';
 
+$nome = "";
+$nacionalidade = "";
+$cpf = "";
+$email = "";
+$telefone = "";
+$rua = "";
+$numero = "";
+$complemento = "";
+$cidade = "";
+
+if (isset($_REQUEST['editar'])) {
+    $cliente = ClienteDao::buscarPorId($_GET['id']);
+    $nome = $cliente->getNome();
+    $nacionalidade = $cliente->getNacionalidade();
+    $cpf = $cliente->getCpf();
+    $email = $cliente->getEmail();
+    $telefone = $cliente->getTelefone();
+    $rua = $cliente->getRua();
+    $numero = $cliente->getNumero();
+    $complemento = $cliente->getComplemento();
+    $idCidade = $cliente->getCidade();
+    $action = "editar&id=" . $cliente->getId();
+}
 
 ?>
 
@@ -41,25 +66,41 @@ include_once '../DAO/ClienteDao.php';
         <br />
             <h2 style="text-align: center;" id="descritivo" class="display-7">Informe os dados</h2>
             <br />
-        <form>
-            <input type="text" class="form-control" id="nomecliente" name="nomecliente" placeholder="Nome" /><br />
-            <input type="text" class="form-control" id="naciocliente" name="naciocliente"
+        <form action="../controller/ClienteController.php?<?php echo $action?>" method="POST">
+            <input value="<?php echo $nome?>" type="text" class="form-control" id="nomecliente" name="nomecliente" placeholder="Nome" /><br />
+            <input value="<?php echo $nacionalidade?>" type="text" class="form-control" id="naciocliente" name="naciocliente"
                 placeholder="Nacionalidade" /><br />
-            <input type="text" class="form-control" id="cpfcliente" name="cpfcliente"
+            <input value="<?php echo $cpf?>" type="text" class="form-control" id="cpfcliente" name="cpfcliente"
                 placeholder="CPF e/ou Passaporte" /><br />
-            <input type="email" class="form-control" id="emailcliente" name="emailcliente" placeholder="Email" /><br />
-            <input type="tel" class="form-control" id="telcliente" name="telcliente" placeholder="Telefone" /><br />
-            <input type="text" class="form-control" id="ruacliente" name="ruacliente" placeholder="Rua" /><br />
-            <input type="number" class="form-control" id="numruacliente" name="numruacliente"
+            <input value="<?php echo $email?>" type="email" class="form-control" id="emailcliente" name="emailcliente" placeholder="Email" /><br />
+            <input value="<?php echo $telefone?>" type="tel" class="form-control" id="telcliente" name="telcliente" placeholder="Telefone" /><br />
+            <input value="<?php echo $rua?>" type="text" class="form-control" id="ruacliente" name="ruacliente" placeholder="Rua" /><br />
+            <input value="<?php echo $numero?>" type="number" class="form-control" id="numruacliente" name="numruacliente"
                 placeholder="Numero" /><br />
-            <input type="text" class="form-control" id="compruacliente" name="compruacliente"
+            <input value="<?php echo $complemento?>" type="text" class="form-control" id="compruacliente" name="compruacliente"
                 placeholder="Complemento" /><br />
-            <select class="form-select">
+            <!--<select class="form-select">
                 <option selected>Cidade</option>
                 <option value="1">Curitiba</option>
                 <option value="2">Florianopolis</option>
                 <option value="3">Porto Alegre</option>
+            </select>-->
+            <select class="form-select" name="nomecidade" id="nomecidade">
+                <option>Selecione a Cidade</option>
+               <?php
+                    $lista = CidadeDao::buscar();
+                    foreach($lista as $cidade){
+                        $selecionar = "";
+                        if($idCidade == $cidade->getId()){
+                            $selecionar = "selected";
+                        }
+                        echo '<option '.$selecionar.' value="'.$cidade->getId().'">'. 
+                        $cidade->getNome().'</option>';
+                   }
+
+               ?>
             </select>
+
             <br>
 
             <a href="FrmCadastro_Pet.php"><button type="button"  id="botao_home" name="cadpet" class="btn btn-primary">Cadastre seu Pet</button></a><br />
