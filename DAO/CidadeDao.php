@@ -62,6 +62,11 @@ class CidadeDao{
         Conexao::executar($sql);
     }
 
+    public static function excluir($id){
+        $sql = "DELETE from cidade WHERE id=".$id;
+        Conexao::executar($sql);
+    }
+
 }
 
 

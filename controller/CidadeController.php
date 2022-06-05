@@ -30,4 +30,21 @@ if(isset($_REQUEST['editar'])){
     header("Location: ../view/FrmCadastro_Cidade.php");
 
 }
+
+if(isset($_REQUEST['excluir'])){
+    $id = $_GET['id'];
+    $cidade = CidadeDao::buscarPorId($id);
+    echo '<br><br><br>'
+        .'<h3> Confirma a Exclusão da Cidade '.$cidade->getNome(). '?</h3>';
+    echo '<a href="?ConfirmaExcluir&id='.$id.'">'
+        .'<button> Sim </button></a>';
+    echo '<a href="../view/FrmCadastro_Cidade.php"><button> Não </button></a>';
+
+}
+
+if(isset($_REQUEST['ConfirmaExcluir'])){
+    $id = $_GET['id'];
+    CidadeDao::excluir($id);
+    header("Location: ../view/FrmCadastro_Cidade.php");
+}
 ?>
