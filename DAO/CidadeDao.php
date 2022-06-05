@@ -37,6 +37,31 @@ class CidadeDao{
         return $lista;
     }
 
+    public static function buscarPorId($id){
+        $sql = "SELECT id, nome, id_estado, id_pais, cep FROM cidade WHERE id=".$id;
+        $result = Conexao::consultar($sql);
+        if($result != NUll){
+           list($_id, $_nome, $_estado, $_pais, $_cep) = mysqli_fetch_row($result);
+                $cidade = new Cidade();
+                $cidade->setId($_id);
+                $cidade->setNome($_nome);
+                $cidade->setEstado($_estado);
+                $cidade->setPais($_pais);
+                $cidade->setCep($_cep);
+        }
+        return $cidade;
+    }
+
+    public static function editar($cidade){
+        $sql = "UPDATE cidade SET "
+               ."nome = '".$cidade->getNome()."',"  
+               ."id_estado = '".$cidade->getEstado()."',"  
+               ."id_pais = '".$cidade->getPais()."',"
+               ."cep = '".$cidade->getCep()."'"   
+               ."WHERE id = ".$cidade->getId();
+        Conexao::executar($sql);
+    }
+
 }
 
 

@@ -4,6 +4,20 @@ $action = "inserir";
 include_once '../DAO/PaisDao.php';
 include_once '../DAO/EstadoDao.php';
 include_once '../DAO/CidadeDao.php';
+
+$nome = "";
+$estado = "";
+$pais = "";
+$cep = "";
+
+if (isset($_REQUEST['editar'])) {
+    $cidade = CidadeDao::buscarPorId($_GET['id']);
+    $nome = $cidade->getNome();
+    $idEstado = $cidade->getEstado();
+    $idPais = $cidade->getPais();
+    $cep = $cidade->getCep();
+    $action = "editar&id=" . $cidade->getId();
+}
 ?>
 
 <html>
@@ -41,7 +55,7 @@ include_once '../DAO/CidadeDao.php';
             <br />
             <h2 style="text-align: center;" id="descritivo" class="display-7">Informe os dados</h2>
             <br />
-            <input type="text" class="form-control" id="nomecidade" name="nomecidade" placeholder="Nome" /><br />
+            <input value="<?php echo $nome?>" type="text" class="form-control" id="nomecidade" name="nomecidade" placeholder="Nome" /><br />
             <!--<select class="form-select">
                 <option selected>Selecione o Estado</option>
                 <option value="1">PR</option>
@@ -89,7 +103,7 @@ include_once '../DAO/CidadeDao.php';
             </select>
             <br>
 
-            <input type="text" class="form-control" id="cepcidade" name="cepcidade" placeholder="CEP" /><br />
+            <input value="<?php echo $cep?>" type="text" class="form-control" id="cepcidade" name="cepcidade" placeholder="CEP" /><br />
             <div style="float: right;">
                 <!--<button type="reset" id="btnlimparcadcidade" name="btnlimparcadcidade"
                     class="btn btn-outline-primary">Reset</button>-->
