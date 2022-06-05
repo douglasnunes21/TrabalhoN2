@@ -63,6 +63,9 @@ include_once '../DAO/CidadeDao.php';
             </div>
         </form>
         <br />
+        <?php
+        $lista = CidadeDao::buscar();
+        ?>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -73,12 +76,17 @@ include_once '../DAO/CidadeDao.php';
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>Porto Alegre</th>
-                    <th>Rio Grande do Sul</th>
-                    <th>Brasil</th>
-                    <th>9999999</th>
-                </tr>
+            <?php 
+                   foreach($lista as $cidade){
+                       echo '<tr>';
+                       echo '<td>'.$cidade->getNome().'</td>';
+                       echo '<td>'.$cidade->getEstado()->getNome().'</td>';
+                       echo '<td>'.$cidade->getPais()->getNome().'</td>';
+                       echo '<td><a href="FrmCadastro_Cidade.php?editar&id='.$cidade->getId().'"><button class="btn btn-outline-primary">Editar</button><a><td>';
+                       echo '<td><a href="../controller/CidadeController.php?excluir&id='.$cidade->getId().'"><button class="btn btn-outline-danger">Excluir</button><a><td>';
+                       echo '</tr>';
+                   }
+                   ?>
             </tbody>
         </table>
         <div style="float: right;">
