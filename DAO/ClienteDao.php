@@ -43,18 +43,40 @@ class ClienteDao{
         $sql = "SELECT id, nome, nacionalidade, cpf, email, telefone, rua, numero, complemento, id_cidade FROM cliente WHERE id=".$id;
         $result = Conexao::consultar($sql);
         if($result != NUll){
-           list($_id, $_nome, $_nacionalidade, $_cpf, $_telefone, $_rua, $_numero, $_complemento, $_idCidade) = mysqli_fetch_row($result);
-           $cliente = new Cliente();
-           $cliente->setId($_id);
-           $cliente->setId($_nome);
-           $cliente->setId($_nacionalidade);
-           $cliente->setId($_cpf);
-           $cliente->setId($_telefone);
-           $cliente->setId($_rua);
-           $cliente->setId($_numero);
-           $cliente->setId($_complemento);
+           list($_id, $_nome, $_nacionalidade, $_cpf, $_email, $_telefone, $_rua, $_numero, $_complemento, $_idCidade) = mysqli_fetch_row($result);
+            $cliente = new Cliente();
+            $cliente->setId($_id);
+            $cliente->setNome($_nome);
+            $cliente->setNacionalidade($_nacionalidade);
+            $cliente->setCpf($_cpf);
+            $cliente->setTelefone($_telefone);
+            $cliente->setEmail($_email);
+            $cliente->setRua($_rua);
+            $cliente->setNumero($_numero);
+            $cliente->setComplemento($_complemento);
+            $cliente->setCidade($_idCidade);
         }
         return $cliente;
+    }
+
+    public static function editar($cliente){
+        $sql = "UPDATE cliente SET "
+               ." nome = '".$cliente->getNome()."',"  
+               ." nacionalidade = '".$cliente->getNacionalidade()."',"  
+               ." cpf = '".$cliente->getCpf()."',"
+               ." telefone = '".$cliente->getTelefone()."',"
+               ." email = '".$cliente->getEmail()."',"
+               ." rua = '".$cliente->getRua()."',"
+               ." numero = '".$cliente->getNumero()."',"
+               ." complemento = '".$cliente->getComplemento()."',"
+               ." id_cidade = '".$cliente->getCidade()."'"   
+               ." WHERE id = ".$cliente->getId();
+        Conexao::executar($sql);
+    }
+
+    public static function excluir($id){
+        $sql = "DELETE from cliente WHERE id=".$id;
+        Conexao::executar($sql);
     }
 
 }

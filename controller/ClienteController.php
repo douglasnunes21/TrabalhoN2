@@ -2,8 +2,6 @@
 
 include_once'../model/ClienteModel.php';
 include_once'../DAO/ClienteDao.php';
-include_once'../model/CidadeModel.php';
-include_once'../DAO/CidadeDao.php';
 
 if(isset($_REQUEST['inserir'])){
 
@@ -24,6 +22,40 @@ if(isset($_REQUEST['inserir'])){
 
     header("Location: ../view/FrmCadastro_Cliente.php");
 
+}
+
+if(isset($_REQUEST['editar'])){
+    $cliente = new Cliente();
+    $cliente->setNome($_POST['nomecliente']);
+    $cliente->setNacionalidade($_POST['naciocliente']);
+    $cliente->setCpf($_POST['cpfcliente']);
+    $cliente->setEmail($_POST['emailcliente']);
+    $cliente->setTelefone($_POST['telcliente']);
+    $cliente->setRua($_POST['ruacliente']);
+    $cliente->setNumero($_POST['numruacliente']);
+    $cliente->setComplemento($_POST['compruacliente']);
+    $cliente->setCidade($_POST['nomecidade']);
+    $cliente->setId($_GET['id']);
+    ClienteDao::editar($cliente);
+    header("Location: ../view/FrmCadastro_Cliente.php");
+
+}
+
+if(isset($_REQUEST['excluir'])){
+    $id = $_GET['id'];
+    $cliente = ClienteDao::buscarPorId($id);
+    echo '<br><br><br>'
+        .'<h3> Confirma a Exclusão do Cliente '.$cliente->getNome(). '?</h3>';
+    echo '<a href="?ConfirmaExcluir&id='.$id.'">'
+        .'<button> Sim </button></a>';
+    echo '<a href="../view/FrmCadastro_Cliente.php"><button> Não </button></a>';
+
+}
+
+if(isset($_REQUEST['ConfirmaExcluir'])){
+    $id = $_GET['id'];
+    ClienteDao::excluir($id);
+    header("Location: ../view/FrmCadastro_Cliente.php");
 }
 
 ?>
