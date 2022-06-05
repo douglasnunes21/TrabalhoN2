@@ -42,7 +42,7 @@ include_once '../DAO/CidadeDao.php';
             <h2 style="text-align: center;" id="descritivo" class="display-7">Informe os dados</h2>
             <br />
             <input type="text" class="form-control" id="nomecidade" name="nomecidade" placeholder="Nome" /><br />
-            <select class="form-select">
+            <!--<select class="form-select">
                 <option selected>Selecione o Estado</option>
                 <option value="1">PR</option>
                 <option value="2">RS</option>
@@ -53,11 +53,46 @@ include_once '../DAO/CidadeDao.php';
                 <option value="1">Brasil</option>
                 <option value="2">Paraguai</option>
                 <option value="3">Uruguai</option>
-            </select><br />
+            </select><br />-->
+
+            <select class="form-select" name="nomeestado" id="nomeestado">
+                <option>Selecione o Estado</option>
+               <?php
+                    $lista = EstadoDao::buscar();
+                    foreach($lista as $estado){
+                        $selecionar = "";
+                        if($idEstado == $estado->getId()){
+                            $selecionar = "selected";
+                        }
+                        echo '<option '.$selecionar.' value="'.$estado->getId().'">'. 
+                        $estado->getNome().'</option>';
+                   }
+
+               ?>
+            </select>
+            <br>
+
+            <select class="form-select" name="nomepais" id="nomepais">
+                <option>Selecione o País</option>
+               <?php
+                    $lista = PaisDao::buscar();
+                    foreach($lista as $pais){
+                        $selecionar = "";
+                        if($idPais == $pais->getId()){
+                            $selecionar = "selected";
+                        }
+                        echo '<option '.$selecionar.' value="'.$pais->getId().'">'. 
+                        $pais->getNome().'</option>';
+                   }
+
+               ?>
+            </select>
+            <br>
+
             <input type="text" class="form-control" id="cepcidade" name="cepcidade" placeholder="CEP" /><br />
             <div style="float: right;">
-                <button type="reset" id="btnlimparcadcidade" name="btnlimparcadcidade"
-                    class="btn btn-outline-primary">Reset</button>
+                <!--<button type="reset" id="btnlimparcadcidade" name="btnlimparcadcidade"
+                    class="btn btn-outline-primary">Reset</button>-->
                 <button type="submit" id="btncadcidade" name="btncadcidade"
                     class="btn btn-outline-success">Cadastrar</button>
             </div>
@@ -80,8 +115,9 @@ include_once '../DAO/CidadeDao.php';
                    foreach($lista as $cidade){
                        echo '<tr>';
                        echo '<td>'.$cidade->getNome().'</td>';
-                       echo '<td>'.$cidade->getEstado()->getNome().'</td>';
-                       echo '<td>'.$cidade->getPais()->getNome().'</td>';
+                       echo '<td>'.$cidade->getEstado().'</td>';
+                       echo '<td>'.$cidade->getPais().'</td>';
+                       echo '<td>'.$cidade->getCep().'</td>';
                        echo '<td><a href="FrmCadastro_Cidade.php?editar&id='.$cidade->getId().'"><button class="btn btn-outline-primary">Editar</button><a><td>';
                        echo '<td><a href="../controller/CidadeController.php?excluir&id='.$cidade->getId().'"><button class="btn btn-outline-danger">Excluir</button><a><td>';
                        echo '</tr>';
@@ -89,12 +125,12 @@ include_once '../DAO/CidadeDao.php';
                    ?>
             </tbody>
         </table>
-        <div style="float: right;">
+        <!--<div style="float: right;">
             <button type="button" id="btnremovecidade" name="btnremovecidade"
                 class="btn btn-outline-danger">Remover</button>
             <button type="button" id="btnalteracidade" name="btnalteracidade"
                 class="btn btn-outline-primary">Alterar</button>
-        </div>
+        </div>-->
     </div>
 </body>
 
