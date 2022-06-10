@@ -156,7 +156,19 @@ ALTER TABLE `cidade`
   ADD CONSTRAINT `cidade_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estado` (`id`);
   ADD CONSTRAINT `cidade_ibfk_2` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id`);
   
-  
+--
+-- Estrutura da tabela `pet`
+--
+
+CREATE TABLE `pet` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `cpf_tutor` varchar(20) DEFAULT NULL,
+  `nome_tutor` varchar(255) DEFAULT NULL,
+  `raca` varchar(200) DEFAULT NULL,
+  `idade` int(11) DEFAULT NULL,
+  `inf_ad` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
