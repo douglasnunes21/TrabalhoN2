@@ -34,15 +34,16 @@
             <br />
         <h2 style="text-align: center;" id="descritivo" class="display-7">Informe os dados</h2>
         <br />
-            <input type="text" class="form-control" id="nomepet" name="nomepet" placeholder="Nome" /><br />
+            <input type="text" class="form-control" id="nomepet" name="nomepet" placeholder="Nome do Pet" /><br />
             <!--<input type="search" class="form-control" placeholder="Tutor"><button type="button" class="btn btn-primary">Pesquisar</button><br />-->
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Tutor" id="nometutor" name="nometutor" aria-label="Recipient's username"
+                <input type="text" class="form-control" placeholder="Informe o CPF do tutor" id="cpftutor" name="cpftutor" aria-label="Recipient's username"
                     aria-describedby="button-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button" id="botao_home" name="butaopesquisartutor" >Pesquisar</button>
                 </div>
             </div>
+            <input type="text" id="nometutor" name="nometutor" class="form-control" placeholder="Nome do Tutor" readonly/><br />
             <input type="text" id="racapet" name="racapet" class="form-control" placeholder="Raça" /><br />
             <input type="number" id="idadepet" name="idadepet" class="form-control" placeholder="Idade" /><br />
             <textarea name="message" id="infadd" name="infadd" class="form-control" placeholder="Informações Adicionais"></textarea><br />
