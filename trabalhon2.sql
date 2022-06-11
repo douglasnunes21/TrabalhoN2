@@ -163,13 +163,39 @@ ALTER TABLE `cidade`
 CREATE TABLE `pet` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) DEFAULT NULL,
-  `cpf_tutor` varchar(20) DEFAULT NULL,
-  `nome_tutor` varchar(255) DEFAULT NULL,
+  `id_tutor` varchar(255) DEFAULT NULL,
   `raca` varchar(200) DEFAULT NULL,
   `idade` int(11) DEFAULT NULL,
   `inf_ad` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `pet`
+--
+
+INSERT INTO `pet` (`id`, `nome`, `id_tutor`, `raca`, `idade`, `inf_ad`) VALUES
+(1, 'Cão', 1, 'Vira-Lata', 5, 'teste');
+
+
+--
+-- Índices para tabela `pet`
+--
+ALTER TABLE `pet`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_tutor` (`id_tutor`);
+
+--
+-- AUTO_INCREMENT de tabela `pet`
+--
+ALTER TABLE `pet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  
+
+--
+-- Limitadores para a tabela `pet`
+--
+ALTER TABLE `pet`
+  ADD CONSTRAINT `pet_ibfk_1` FOREIGN KEY (`id_tutor`) REFERENCES `cliente` (`id`);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
