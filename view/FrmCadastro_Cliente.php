@@ -103,7 +103,7 @@ if (isset($_REQUEST['editar'])) {
 
             <br>
 
-            <a href="FrmCadastro_Pet.php"><button type="button"  id="botao_home" name="cadpet" class="btn btn-primary">Cadastre seu Pet</button></a><br />
+            <!--<a href="FrmCadastro_Pet.php"><button type="button"  id="botao_home" name="cadpet" class="btn btn-primary">Cadastre seu Pet</button></a><br />-->
 
             <div style="float: right;">
                 <!--<button type="clear" id="btnlimparcadecliente" name="btnlimparcadecliente"
@@ -113,6 +113,7 @@ if (isset($_REQUEST['editar'])) {
             </div>
             <br /><br />
         </form>
+        <a href="FrmCadastro_Pet.php"><button type="button"  id="botao_home" name="cadpet" class="btn btn-primary">Cadastre seu Pet</button></a><br />
         <br>
         <?php
         $lista = ClienteDao::buscar();
