@@ -48,15 +48,16 @@
               </div>-->
               <br /><br />
         </form>  
-
-              <label>Desmarcar Atendimento</label> <br /><br />    
-              <div class="input-group mb-3">
-                <input type="datetime-local" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <form action="FrmInfoDesmarcar.php" method="POST">
+          <label>Desmarcar Atendimento</label> <br /><br />
+          <div class="input-group mb-3">
+                <input type="date" name="desmarcar" class="form-control" placeholder="Informe a data" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-primary" id="botao_home" type="button" id="button-addon2">Desmarcar</button>
+                <a href="FrmInfoDesmarcar.php"><button class="btn btn-primary" id="botao_home" type="submit" id="button-addon2">Desmarcar</button></a>
                 </div>
               </div>
-        </form>
+              <br /><br />
+        </form>  
     </div>
 </body>
 
