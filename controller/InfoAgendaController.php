@@ -22,7 +22,7 @@ if(isset($_REQUEST['inserir'])){
 if(isset($_REQUEST['excluir'])){
     $id = $_GET['id'];
     $infoagenda = InfoagendaDao::buscarPorId($id);
-    echo '<br><br><br>'
+    echo '<br><br><br>' 
         .'<h3> Confirma a exclusão da agenda na data '.$infoagenda->getData(). ', horário '.$infoagenda->getHorario(). '?</h3>';
     echo '<a href="?ConfirmaExcluir&id='.$id.'">'
         .'<button> Sim </button></a>';
@@ -34,6 +34,17 @@ if(isset($_REQUEST['ConfirmaExcluir'])){
     $id = $_GET['id'];
     InfoagendaDao::excluir($id);
     header("Location: ../view/FrmInfoDesmarcar.php");
+}
+
+if(isset($_REQUEST['buscapordata'])){
+    $data = $_GET['datamarcada'];
+    $infoagenda = InfoagendaDao::buscarPorData($data);
+    //echo '<br><br><br>' 
+      //  .'<h3> Confirma a exclusão da agenda na data '.$infoagenda->getData(). ', horário '.$infoagenda->getHorario(). '?</h3>';
+   // echo '<a href="?ConfirmaExcluir&id='.$id.'">'
+     //   .'<button> Sim </button></a>';
+  //  echo '<a href="../view/FrmInfoDesmarcar.php"><button> Não </button></a>';
+
 }
 
 

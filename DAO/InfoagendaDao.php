@@ -56,6 +56,34 @@ class InfoagendaDao{
         return $infoagenda;
     }
     
+    public static function buscarporData($data){
+        $sql = "SELECT i.id, date_format(i.datamarcada,'%d/%m/%Y'), i.horario, i.id_tutor,i.id_pet, c.nome, p.nome FROM infoagenda i, cliente c, pet p WHERE i.id_tutor = c.id and i.id_pet = p.id and datamarcada=".$data;
+        $result = Conexao::consultar($sql);
+        $lista = new ArrayObject();
+        if($result != NUll){
+            while(list($_id, $_datamarcada, $_horario, $_id_tutor, $_id_pet, $_tutor, $_pet) = mysqli_fetch_row($result)){
+                $cliente = new Cliente();
+                $cliente->setId($_id_tutor);
+                $cliente->setNome($_tutor);
+
+                $pet = new Pet();
+                $pet->setId($_id_pet);
+                $pet->setNome($_pet);
+
+                $infoagenda = new Infoagenda();
+                $infoagenda->setId($_id);
+                $infoagenda->setData($_datamarcada);
+                $infoagenda->setHorario($_horario);
+                $infoagenda->setTutor($_tutor);
+                $infoagenda->setPet($_pet);
+                $lista->append($infoagenda);
+            }
+        }
+        return $lista;
+    }
+
+
+
 }
 
 ?>

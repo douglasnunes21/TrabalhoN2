@@ -47,7 +47,7 @@
                 </div>
               </div>-->
               <br /><br />
-        </form>  
+              </form>  
         <form action="FrmInfoDesmarcar.php" method="POST">
           <label>Desmarcar Atendimento</label> <br /><br />
           <div class="input-group mb-3">
@@ -56,8 +56,8 @@
                 <a href="FrmInfoDesmarcar.php"><button class="btn btn-primary" id="botao_home" type="submit" id="button-addon2">Desmarcar</button></a>
                 </div>
               </div>
-              <br /><br />
-        </form>  
+              <br /><br />        
+            </form>
     </div>
 </body>
 
