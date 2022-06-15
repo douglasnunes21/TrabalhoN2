@@ -30,7 +30,7 @@
         <form action="FrmInfo_Agenda.php" method="POST">
           <label>Agendar Atendimento</label> <br /><br />
           <div class="input-group mb-3">
-                <input type="date" name="marcar" class="form-control" placeholder="Informe a data" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="date" name="marcar" class="form-control" placeholder="Informe a data" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                 <div class="input-group-append">
                 <a href="FrmInfo_Agenda.php"><button class="btn btn-primary" id="botao_home" type="submit" id="button-addon2">Agendar</button></a>
                 </div>
