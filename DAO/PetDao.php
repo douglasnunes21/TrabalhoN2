@@ -66,4 +66,27 @@ class PetDao{
         Conexao::executar($sql);
     }
 
+    public static function buscartutor(){
+        $sql = "SELECT p.id, p.nome, p.id_tutor, p.raca, p.idade, p.inf_ad, c.nome FROM pet p, cliente c WHERE p.id_tutor = c.id ORDER BY p.nome";
+        $result = Conexao::consultar($sql);
+        $lista = new ArrayObject();
+        if($result != NUll){
+            while(list($_id, $_nome, $_idtutor, $_raca, $_idade, $_inf_ad, $_nometutor) = mysqli_fetch_row($result)){
+                $cliente = new Cliente();
+                $cliente->setId($_idtutor);
+                $cliente->setNome($_nometutor);
+
+                $pet = new Pet();
+                $pet->setId($_id);
+                $pet->setNome($_nome);
+                $pet->setId_tutor($cliente);
+                $pet->setRaca($_raca);
+                $pet->setIdade($_idade);
+                $pet->setInf_ad($_inf_ad);
+                $lista->append($pet);
+            }
+        }
+        return $lista;
+    }
+
 }

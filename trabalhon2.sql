@@ -198,6 +198,41 @@ ALTER TABLE `pet`
   ADD CONSTRAINT `pet_ibfk_1` FOREIGN KEY (`id_tutor`) REFERENCES `cliente` (`id`);
 
 
+
+
+--
+-- Estrutura da tabela `pet`
+--
+
+CREATE TABLE `infoagenda` (
+  `id` int(11) NOT NULL,
+  `data` varchar(255) DEFAULT NULL,
+  `horario` varchar(255) DEFAULT NULL,
+  `id_tutor` varchar(200) DEFAULT NULL,
+  `id_pet` int(11) DEFAULT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `infoagenda` (`id`, `data`, `horario`, `id_tutor`, `id_pet`) VALUES
+(1, '14/06/2022', '13:00', 1, 2);
+
+--
+-- Índices para tabela `pet`
+--
+ALTER TABLE `infoagenda`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_tutor` (`id_tutor`),
+  ADD KEY `id_pet` (`id_pet`);
+
+
+ALTER TABLE `infoagenda`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+
+ALTER TABLE `infoagenda`
+  ADD CONSTRAINT `agenda_ibfk_1` FOREIGN KEY (`id_tutor`) REFERENCES `cliente` (`id`),
+  ADD CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`id_pet`) REFERENCES `pet` (`id`);
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

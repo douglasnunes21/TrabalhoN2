@@ -1,3 +1,13 @@
+<?php
+
+$action = "inserir";
+
+include_once '../DAO/PetDao.php';
+include_once '../DAO/ClienteDao.php';
+include_once '../DAO/InfoagendaDao.php';
+
+?>
+
 <html>
     <head>
         <meta charset="utf-8" name="viewport" content="width = device-width,
@@ -28,16 +38,49 @@
             <h2 style="text-align: center;" id="descritivo" class="display-7">Informe os dados</h2>
             <br />
             
-        <form>
-            <input class="form-control" type="text" placeholder="Horário Marcado" readonly> <br />
-            <div class="input-group mb-3">
+        <form action="../controller/InfoAgendaController.php?<?php echo $action?>" method="POST">
+            <input  value ="<?php echo($_POST['marcar']);?>" class="form-control" type="date" id="datamarcada" name="datamarcada" readonly> <br />
+            <input  class="form-control" type="time" placeholder="Horario" id="horario" name="horario" > <br />
+            <!--<div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Tutor" id="nometutor" name="nometutor" aria-label="Recipient's username"
                     aria-describedby="button-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button" id="botao_home" name="butaopesquisartutor" >Pesquisar</button>
                 </div>
-            </div>
-            <select class="form-select">
+            </div>-->
+            <select class="form-select" name="nometutor" id="nometutor">
+                <option>Selecione o Tutor</option>
+               <?php
+                    $lista = ClienteDao::buscar();
+                    foreach($lista as $cliente){
+                        $selecionar = "";
+                        if($id_tutor == $cliente->getId()){
+                            $selecionar = "selected";
+                        }
+                        echo '<option '.$selecionar.' value="'.$cliente->getId().'">'. 
+                        $cliente->getNome().'</option>';
+                   }
+
+               ?>
+            </select>
+            <br>
+            <select class="form-select" name="nomepet" id="nomepet">
+                <option>Selecione o Pet</option>
+               <?php
+                    $lista = PetDao::buscar();
+                    foreach($lista as $pet){
+                        $selecionar = "";
+                        if($id == $pet->getId()){
+                            $selecionar = "selected";
+                        }
+                        echo '<option '.$selecionar.' value="'.$pet->getId().'">'. 
+                        $pet->getNome().'</option>';
+                   }
+
+               ?>
+            </select>
+            <br>
+            <!--<select class="form-select">
                 <option selected>Selecione o Pet</option>
                 <option value="1">Astor</option>
             </select><br />
@@ -47,6 +90,9 @@
                 <div class="input-group-append">
                     <button class="btn btn-outline-success" type="button" id="btnagendar" name="btnagendar" >Agendar</button>
                 </div>
+            </div>-->
+            <div style="float: right;">
+            <button type="submit" id="btnagendar" name="btnagendar" class="btn btn-outline-success">Agendar</button>
             </div>
         </form>
     </div>

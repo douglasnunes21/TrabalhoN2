@@ -27,9 +27,15 @@
       <br />
     <h2 style="text-align: center;" id="descritivo" class="display-7">Selecione a opção desejada</h2>
     <br />
-        <form>
-          <label>Agendar um horário</label> <br /><br />          
-            <div class="input-group">
+        <form action="FrmInfo_Agenda.php" method="POST">
+          <label>Agendar Atendimento</label> <br /><br />
+          <div class="input-group mb-3">
+                <input type="date" name="marcar" class="form-control" placeholder="Informe a data" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                <a href="FrmInfo_Agenda.php"><button class="btn btn-primary" id="botao_home" type="submit" id="button-addon2">Agendar</button></a>
+                </div>
+              </div>
+            <!--<div class="input-group">
                 <select class="form-select" id="inputGroupSelect04" aria-label="Exemplo de select com botão addon">
                   <option selected>Selecione um horário</option>
                   <option value="1">08:00</option>
@@ -39,9 +45,11 @@
                 <div class="input-group-append">
                   <a href="FrmInfo_Agenda.php"><button class="btn btn-primary" id="botao_home" type="button">Agendar</button></a>
                 </div>
-              </div>
+              </div>-->
               <br /><br />
-              <label>Desmarcar um horário</label> <br /><br />    
+        </form>  
+
+              <label>Desmarcar Atendimento</label> <br /><br />    
               <div class="input-group mb-3">
                 <input type="datetime-local" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
