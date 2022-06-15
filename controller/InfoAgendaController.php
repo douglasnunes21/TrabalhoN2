@@ -23,17 +23,17 @@ if(isset($_REQUEST['excluir'])){
     $id = $_GET['id'];
     $infoagenda = InfoagendaDao::buscarPorId($id);
     echo '<br><br><br>'
-        .'<h3> Confirma a Exclusão da Data '.$infoagenda->getData(). '?</h3>';
+        .'<h3> Confirma a exclusão da agenda na data '.$infoagenda->getData(). ', horário '.$infoagenda->getHorario(). '?</h3>';
     echo '<a href="?ConfirmaExcluir&id='.$id.'">'
         .'<button> Sim </button></a>';
-    echo '<a href="../view/FrmAgenda.php"><button> Não </button></a>';
+    echo '<a href="../view/FrmInfoDesmarcar.php"><button> Não </button></a>';
 
 }
 
 if(isset($_REQUEST['ConfirmaExcluir'])){
     $id = $_GET['id'];
     InfoagendaDao::excluir($id);
-    header("Location: ../view/FrmAgenda.php");
+    header("Location: ../view/FrmInfoDesmarcar.php");
 }
 
 
