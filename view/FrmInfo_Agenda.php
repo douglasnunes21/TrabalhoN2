@@ -40,7 +40,7 @@ include_once '../DAO/InfoagendaDao.php';
             
         <form action="../controller/InfoAgendaController.php?<?php echo $action?>" method="POST">
             <input  value ="<?php echo($_POST['marcar']);?>" class="form-control" type="date" id="datamarcada" name="datamarcada" readonly> <br />
-            <input  class="form-control" type="time" placeholder="Horario" id="horario" name="horario" > <br />
+            <input  class="form-control" type="time" placeholder="Horario" id="horario" name="horario" required> <br />
             <!--<div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Tutor" id="nometutor" name="nometutor" aria-label="Recipient's username"
                     aria-describedby="button-addon2">
