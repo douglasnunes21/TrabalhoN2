@@ -34,7 +34,15 @@
               <!--<img class="card-img-top" src="img/img-cad-1.png" alt="Card image cap">-->
               <i id="icone_home" class="fa-solid fa-address-card fa-10x" style="text-align: center;"></i>
               <div class="card-body">
-                <a href="FrmCadastro_Cliente.php" id="botao_home" class="btn btn-dark">Cadastrar um Cliente</a>
+                <a href="FrmCadastro_Cliente.php" id="botao_home" class="btn btn-dark">Cadastrar Cliente</a>
+            </div>
+            </div>
+            <div class="card" style="text-align: center;">
+              <br>
+              <!--<img class="card-img-top" src="img/img-cad-1.png" alt="Card image cap">-->
+              <i id="icone_home" class="fa-solid fa-paw fa-10x" style="text-align: center;"></i>
+              <div class="card-body">
+                <a href="FrmCadastro_Pet.php" id="botao_home" class="btn btn-dark">Cadastrar Pet</a>
             </div>
             </div>
             <div class="card" style="text-align: center;">
@@ -42,15 +50,15 @@
               <!--<img class="card-img-top" src="img/img-cad-2.png" alt="Card image cap">-->
               <i id="icone_home" class="fa-solid fa-city fa-10x" style="text-align: center;"></i>
               <div class="card-body">
-                <a href="FrmCadastro_Cidade.php" id="botao_home" class="btn btn-dark">Cadastrar uma Cidade</a>
+                <a href="FrmCadastro_Cidade.php" id="botao_home" class="btn btn-dark">Cadastrar Cidade</a>
             </div>
             </div>
             <div class="card" style="text-align: center;">
               <br>
               <!--<img class="card-img-top" src="img/img-cad-3.png" alt="Card image cap">-->
-              <i id="icone_home" class="fa-solid fa-mountain-city fa-10x" style="text-align: center;"></i>
+              <i id="icone_home" class="fa-solid fa-tree-city fa-10x" style="text-align: center;"></i>
               <div class="card-body">
-                <a href="FrmCadastro_Estado.php" id="botao_home" class="btn btn-dark">Cadastrar um Estado</a>
+                <a href="FrmCadastro_Estado.php" id="botao_home" class="btn btn-dark">Cadastrar Estado</a>
             </div>
             </div>
             <div class="card" style="text-align: center;">
@@ -58,7 +66,7 @@
                 <!--<img class="card-img-top" src="img/img-cad-4.png" alt="Card image cap">-->
                 <i id="icone_home" class="fa-solid fa-earth-americas fa-10x" style="text-align: center;"></i>
                 <div class="card-body">                
-                  <a href="FrmCadastro_Pais.php" id="botao_home" class="btn btn-dark">Cadastrar um País</a>
+                  <a href="FrmCadastro_Pais.php" id="botao_home" class="btn btn-dark">Cadastrar País</a>
                 </div>
               </div>
           </div>

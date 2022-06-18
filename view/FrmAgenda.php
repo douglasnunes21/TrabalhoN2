@@ -27,7 +27,7 @@
       <br />
     <h2 style="text-align: center;" id="descritivo" class="display-7">Selecione a opção desejada</h2>
     <br />
-        <form action="FrmInfo_Agenda.php" method="POST">
+        <!--<form action="FrmInfo_Agenda.php" method="POST">
           <label>Agendar Atendimento</label> <br /><br />
           <div class="input-group mb-3">
                 <input type="date" name="marcar" class="form-control" placeholder="Informe a data" aria-label="Recipient's username" aria-describedby="button-addon2" required>
@@ -35,7 +35,7 @@
                 <a href="FrmInfo_Agenda.php"><button class="btn btn-primary" id="botao_home" type="submit" id="button-addon2">Agendar</button></a>
                 </div>
               </div>
-            <!--<div class="input-group">
+            <div class="input-group">
                 <select class="form-select" id="inputGroupSelect04" aria-label="Exemplo de select com botão addon">
                   <option selected>Selecione um horário</option>
                   <option value="1">08:00</option>
@@ -45,9 +45,9 @@
                 <div class="input-group-append">
                   <a href="FrmInfo_Agenda.php"><button class="btn btn-primary" id="botao_home" type="button">Agendar</button></a>
                 </div>
-              </div>-->
+              </div>
               <br /><br />
-              </form>  
+              </form> 
         <form action="FrmInfoDesmarcar.php" method="POST">
           <label>Desmarcar Atendimento</label> <br /><br />
           <div class="input-group mb-3">
@@ -57,7 +57,35 @@
                 </div>
               </div>
               <br /><br />        
-            </form>
+            </form>--> 
+
+            <div class="card-group">
+            <div class="card" style="text-align: center;">
+              <br>
+              <!--<div class="input-group mb-3">
+                <input type="date" name="marcar" class="form-control" placeholder="Informe a data" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                <div class="input-group-append">
+                <a href="FrmInfo_Agenda.php"><button class="btn btn-primary" id="botao_home" type="submit" id="button-addon2">Agendar</button></a>
+                </div>
+              </div>-->
+              <!--<img class="card-img-top" src="img/img-cad-1.png" alt="Card image cap">-->
+              <i id="icone_home" class="fa-solid fa-calendar-check fa-10x" style="text-align: center;"></i>
+              <div class="card-body">
+              <!--<input type="date" name="marcar" class="form-control" placeholder="Informe a data" aria-label="Recipient's username" aria-describedby="button-addon2" required>-->
+              <br>  
+              <a href="FrmInfo_Agenda.php" id="botao_home" class="btn btn-dark">Agendar Atendimento</a>
+            </div>
+            </div>
+            <div class="card" style="text-align: center;">
+              <br>
+              <!--<img class="card-img-top" src="img/img-cad-2.png" alt="Card image cap">-->
+              <i id="icone_home" class="fa-solid fa-calendar-xmark fa-10x" style="text-align: center;"></i>
+              <div class="card-body">
+              <br> 
+                <a href="FrmInfoDesmarcar.php" id="botao_home" class="btn btn-dark">Desmarcar Atendimento</a>
+            </div>
+            </div>
+          </div>
     </div>
 </body>
 
