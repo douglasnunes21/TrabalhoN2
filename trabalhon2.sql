@@ -233,6 +233,38 @@ ALTER TABLE `infoagenda`
   ADD CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`id_pet`) REFERENCES `pet` (`id`);
 
 
+
+CREATE TABLE `cliente` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `nacionalidade` varchar(255) DEFAULT NULL,
+  `cpf` varchar(200) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `telefone` varchar(200) DEFAULT NULL,
+  `rua` varchar(200) DEFAULT NULL,
+  `numero` varchar(200) DEFAULT NULL,
+  `complemento` varchar(200) DEFAULT NULL,
+  `id_cidade` int(11) DEFAULT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `cliente` (`id`, `nome`, `nacionalidade`, `cpf`, `email`, `telefone`, `rua`, `numero`, `complemento`, `id_cidade`) VALUES
+(1, 'Teste', 'Brasileito', '123456', 'teste@teste', '30303030','teste', '10', 'teste',1);
+
+
+ALTER TABLE `cliente`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+
+
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_cidade` (`id_cidade`);
+
+
+ALTER TABLE `cliente`
+  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_cidade`) REFERENCES `cidade` (`id`);
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
